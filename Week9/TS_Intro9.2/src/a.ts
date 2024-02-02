@@ -72,11 +72,11 @@ console.log(e.greet("Hi there "));
 
 
 //Type
-// type User={
-//     firstName:string;
-//     lastName:string;
-//     age:number;
-// }
+type User={
+    firstName:string;
+    lastName:string;
+    age:number;
+}
 
 //Union first use of type
 type StringOrNumber=string |number;
