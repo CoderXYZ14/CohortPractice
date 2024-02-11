@@ -1,5 +1,5 @@
 import {useState} from "react";
-
+let counter=4;
 export default function Todo(){
     let [todos,setTodos]=useState([{
         id:1,
@@ -17,10 +17,20 @@ export default function Todo(){
             description:"sleep at 12am"
         }
         ])
-    return(<>  )
+    function addTodo(){
+        setTodos(([...todos,{
+            id:counter++,
+            title:Math.random(),
+            description: Math.random()
+        }]))
+    }
+    return(<>
+        <button onClick={addTodo}>Add a todo</button>
+        {todos.map(todo=> <Todos key={todo.id} title={todo.title} description={todo.description}/>)}
+    </>)
 }
 
-function todo({title,description}){
+function Todos({title,description}){
     return(
         <>
             <h1>{title}</h1>
